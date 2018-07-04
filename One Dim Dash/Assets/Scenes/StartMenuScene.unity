@@ -824,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -80.4, y: -115}
+  m_AnchoredPosition: {x: -80.399994, y: -115}
   m_SizeDelta: {x: 240.3, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581496380
@@ -2100,6 +2100,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: StartMenuTheme
+    clip: {fileID: 8300000, guid: bb0e6b6e95f263d4cb847b66ad2c85cb, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: bb0e6b6e95f263d4cb847b66ad2c85cb, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuButtonHighlight
+    clip: {fileID: 8300000, guid: bb0e6b6e95f263d4cb847b66ad2c85cb, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuButtonSelect
+    clip: {fileID: 8300000, guid: bb0e6b6e95f263d4cb847b66ad2c85cb, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PassedObstacle
     clip: {fileID: 8300000, guid: bb0e6b6e95f263d4cb847b66ad2c85cb, type: 3}
     volume: 0.3
     pitch: 1
