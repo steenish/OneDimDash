@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
+
+
     private float _speedRequirement = 1; // Default speed requirement
 
     public float speedRequirement {
@@ -26,6 +28,12 @@ public class Obstacle : MonoBehaviour {
             if (!withinSpeedThreshold(playerSpeed)) {
                 player.GetComponent<Player>().kill();
             }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            PersistentAudioManager.instance.play("PassedObstacle");
         }
     }
 

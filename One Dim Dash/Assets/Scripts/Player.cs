@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
 	public void kill() {
+        PersistentAudioManager.instance.play("DeathSound");
         SceneManager.LoadScene(2);
         int finalScore = Mathf.RoundToInt(GameObject.Find("GameMaster").GetComponent<ScoreCounter>().currentScore);
         PlayerPrefs.SetInt("LastScore", finalScore);

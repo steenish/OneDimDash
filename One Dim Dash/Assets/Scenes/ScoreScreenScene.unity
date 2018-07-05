@@ -173,7 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100433157
 GameObject:
@@ -247,7 +247,7 @@ Transform:
   m_LocalScale: {x: 100, y: 0.03, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155448659
 GameObject:
@@ -468,7 +468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576496572
 GameObject:
@@ -629,6 +629,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1463865120}
+        m_MethodName: play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuButtonSelect
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -832,7 +843,7 @@ RectTransform:
   - {fileID: 673811643}
   - {fileID: 576496573}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -886,7 +897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -5.769, y: 0.039373636}
+  m_AnchoredPosition: {x: -5.769, y: -0.05}
   m_SizeDelta: {x: 223.883, y: 52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &988372099
@@ -939,6 +950,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1463865120}
+        m_MethodName: play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MenuButtonSelect
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &988372100
@@ -974,6 +996,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 988372097}
+--- !u!1001 &1105350709
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.374384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.8484383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 46.07144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712544473055438, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9f1d73555f16e19449a58d67a90d542f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1222977667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1080,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad49e0d6f14bbb4cb449b84877f5e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1463865120 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114491239087671306, guid: 9f1d73555f16e19449a58d67a90d542f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1105350709}
+  m_Script: {fileID: 11500000, guid: 5349c6ee0b8d88542ad77cb300c719ab, type: 3}
 --- !u!1 &1834573194
 GameObject:
   m_ObjectHideFlags: 0
