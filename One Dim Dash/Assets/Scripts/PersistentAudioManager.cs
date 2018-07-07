@@ -43,6 +43,5 @@ public class PersistentAudioManager : MonoBehaviour {
             return;
         }
         s.source.Play();
-        Debug.Log("Playing " + name);
     }
 }
