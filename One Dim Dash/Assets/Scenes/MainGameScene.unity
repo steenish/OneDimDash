@@ -381,9 +381,9 @@ MonoBehaviour:
   - {fileID: 1050810328936824, guid: 9c88a72b1bd267545b8852d51ba91874, type: 2}
   - {fileID: 1665654644916390, guid: db390d5a8a02f1e4c86d2ade551e16c6, type: 2}
   - {fileID: 1341520869484168, guid: caefad8ca7a626b4aa9c6355625980f2, type: 2}
-  largestWidth: 0
+  largestWidth: 4.5
   spawnExtraSpace: 0
-  requiredSpawnSpace: 0
+  maximumChangeInSpeedRequirement: 5
   timeToLikelySpawn: 100
 --- !u!4 &791538557
 Transform:

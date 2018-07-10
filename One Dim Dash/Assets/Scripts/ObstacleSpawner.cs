@@ -8,9 +8,11 @@ public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns
     public PlayerState playerState;
     public GameObject[] obstaclePrefabs;
 
-    public float largestWidth;      // <- THESE NEED TO BE CALIBRATED
-    public float spawnExtraSpace;   // <-
-    public float requiredSpawnSpace;
+    public float largestWidth;
+    public float spawnExtraSpace;   // <-THIS MAY NEED TO BE CALIBRATED
+    private float requiredSpawnSpace;
+
+    public float maximumChangeInSpeedRequirement;
 
     public float timeToLikelySpawn;
 
@@ -44,7 +46,7 @@ public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns
     }
 
     private void spawnObstacle() {
-        float speedRequirement = randomSpeedRequirement();
+        float speedRequirement = (lastSpawnedObstacle == null) ? randomSpeedRequirement() : appropriateSpeedRequirement();
         int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
 
         GameObject newObstacle = Instantiate(obstaclePrefabs[obstacleIndex], spawnPoint);
@@ -69,5 +71,12 @@ public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns
 
     private float randomSpeedRequirement() {
         return Random.Range(playerState.minSpeed, playerState.maxSpeed);
+    }
+
+    // Returns a speed requirement that is not unrealistically far from the previous obstacle's requirement.
+    private float appropriateSpeedRequirement() {
+        float lastSpeedRequirement = lastSpawnedObstacle.GetComponent<Obstacle>().speedRequirement;
+        float clampedRequirement = Mathf.Clamp(randomSpeedRequirement(), lastSpeedRequirement - maximumChangeInSpeedRequirement, lastSpeedRequirement + maximumChangeInSpeedRequirement);
+        return Mathf.Clamp(clampedRequirement, playerState.minSpeed, playerState.maxSpeed);
     }
 }

@@ -42,7 +42,7 @@ public class Obstacle : MonoBehaviour {
     }
 
     private void setColor() {
-        // Calculate a value between 0 and 1 depending on _speed
+        // Calculate a value between 0 and 1 depending on _speedRequirement
         float colorValue = 1 - Mathf.Abs((11 - 2 * _speedRequirement) / 9);
 
         // Change the color to red if speed is greater than 5.5, otherwise towards green

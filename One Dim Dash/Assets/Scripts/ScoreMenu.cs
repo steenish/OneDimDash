@@ -12,8 +12,4 @@ public class ScoreMenu : MonoBehaviour {
     public void returnToMenu() {
         SceneManager.LoadScene(0);
     }
-
-    public void playSelectSound() {
-//FIX HERE
-    }
 }
