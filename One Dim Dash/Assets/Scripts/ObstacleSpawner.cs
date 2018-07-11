@@ -92,14 +92,14 @@ public class ObstacleSpawner : MonoBehaviour {
     }
 
     private void spawnInitialSpeedParticles() {
-        float leftLimit = GameObject.Find("DespawnCollider").transform.position.x;
+        float leftLimit = GameObject.Find("DespawnCollider").transform.position.x + 5;
         float rightLimit = GameObject.Find("ObstacleSpawnPoint").transform.position.x;
 
         for (int i = 0; i < maximumSpeedParticles; i++) {
             float xPosition = Random.Range(leftLimit, rightLimit);
             float yPosition = randomYPosition();
 
-            GameObject particle = Instantiate(speedParticlePrefab);
+            GameObject particle = Instantiate(speedParticlePrefab, spawnPoint);
             particle.transform.position = new Vector3(xPosition, yPosition, 0);
         }
 
