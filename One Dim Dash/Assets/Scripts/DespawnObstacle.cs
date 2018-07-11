@@ -5,7 +5,7 @@ using UnityEngine;
 public class DespawnObstacle : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Obstacle") {
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "SpeedParticle") {
             Destroy(collision.gameObject);
         }
     }

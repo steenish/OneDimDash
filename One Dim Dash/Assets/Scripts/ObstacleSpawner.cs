@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns inside last spawned obstacle and that the change in speed requirement is not too large. NEEDS TESTING AND CALIBRATION.
+public class ObstacleSpawner : MonoBehaviour {
 
     public RectTransform spawnPoint;
     public PlayerState playerState;
     public GameObject[] obstaclePrefabs;
+    public GameObject speedParticlePrefab;
 
     public float largestWidth;
     public float spawnExtraSpace;   // <-THIS MAY NEED TO BE CALIBRATED
     private float requiredSpawnSpace;
+    
+    public int maximumSpeedParticles;
+    private float cameraSize;
 
     public float maximumChangeInSpeedRequirement;
 
@@ -23,12 +27,19 @@ public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns
 	void Start () {
         spawnObstacle();
         requiredSpawnSpace = largestWidth + spawnExtraSpace;
+        cameraSize = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().orthographicSize;
+
+        spawnInitialSpeedParticles();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (readyToSpawn()) {
             spawnObstacle();
+        }
+
+        if (readyToSpawnParticle()) {
+            spawnParticle();
         }
 	}
 
@@ -78,5 +89,33 @@ public class ObstacleSpawner : MonoBehaviour { // TODO: Make sure nothing spawns
         float lastSpeedRequirement = lastSpawnedObstacle.GetComponent<Obstacle>().speedRequirement;
         float clampedRequirement = Mathf.Clamp(randomSpeedRequirement(), lastSpeedRequirement - maximumChangeInSpeedRequirement, lastSpeedRequirement + maximumChangeInSpeedRequirement);
         return Mathf.Clamp(clampedRequirement, playerState.minSpeed, playerState.maxSpeed);
+    }
+
+    private void spawnInitialSpeedParticles() {
+        float leftLimit = GameObject.Find("DespawnCollider").transform.position.x;
+        float rightLimit = GameObject.Find("ObstacleSpawnPoint").transform.position.x;
+
+        for (int i = 0; i < maximumSpeedParticles; i++) {
+            float xPosition = Random.Range(leftLimit, rightLimit);
+            float yPosition = randomYPosition();
+
+            GameObject particle = Instantiate(speedParticlePrefab);
+            particle.transform.position = new Vector3(xPosition, yPosition, 0);
+        }
+
+        gameObject.GetComponent<ObstacleMover>().populateInitialSpeedParticles();
+    }
+
+    private float randomYPosition() {
+        return Random.Range(-cameraSize, cameraSize);
+    }
+
+    private bool readyToSpawnParticle() {
+        return gameObject.GetComponent<ObstacleMover>().speedParticles.Length <= maximumSpeedParticles;
+    }
+
+    private void spawnParticle() {
+        GameObject particle = Instantiate(speedParticlePrefab, spawnPoint);
+        particle.transform.position = new Vector3(particle.transform.position.x, randomYPosition(), particle.transform.position.z);
     }
 }
