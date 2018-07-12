@@ -380,7 +380,7 @@ MonoBehaviour:
   - {fileID: 1566077458127002, guid: 1702191d57bcc1745b322262138039eb, type: 2}
   - {fileID: 1050810328936824, guid: 9c88a72b1bd267545b8852d51ba91874, type: 2}
   - {fileID: 1665654644916390, guid: db390d5a8a02f1e4c86d2ade551e16c6, type: 2}
-  - {fileID: 1341520869484168, guid: caefad8ca7a626b4aa9c6355625980f2, type: 2}
+  - {fileID: 1336011775330656, guid: caefad8ca7a626b4aa9c6355625980f2, type: 2}
   speedParticlePrefab: {fileID: 1507422783357208, guid: beadac45be7c7964785bd0e72abf61e3,
     type: 2}
   largestWidth: 4.5

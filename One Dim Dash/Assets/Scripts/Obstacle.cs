@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
-
-
-
+    
     private float _speedRequirement = 1; // Default speed requirement
 
     public float speedRequirement {
@@ -19,6 +17,18 @@ public class Obstacle : MonoBehaviour {
     }
 
     public int speedThreshold;
+
+    private ParticleSystem thisParticleSystem;
+
+    void Start() {
+        thisParticleSystem = gameObject.GetComponent<ParticleSystem>();
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            thisParticleSystem.Play();
+        }
+    }
 
     void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
@@ -34,6 +44,7 @@ public class Obstacle : MonoBehaviour {
     void OnTriggerExit2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             PersistentAudioManager.instance.play("PassedObstacle");
+            thisParticleSystem.Stop();
         }
     }
 
@@ -47,9 +58,11 @@ public class Obstacle : MonoBehaviour {
 
         // Change the color to red if speed is greater than 5.5, otherwise towards green
         if (_speedRequirement > 5.5) {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, colorValue, colorValue);
+            Color color = new Color(1, colorValue, colorValue);
+            gameObject.GetComponent<SpriteRenderer>().color = color;
         } else {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(colorValue, 1, colorValue);
+            Color color = new Color(colorValue, 1, colorValue);
+            gameObject.GetComponent<SpriteRenderer>().color = color;
         }
     }
 }
