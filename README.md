@@ -6,7 +6,7 @@ Since this is a one-person project and it was almost complete by the time this r
 ## Feature list:
 * Fast-paced gameplay
 * 2D graphics (because of course you cannot ACTUALLY play a game in one dimension)
-* Keyboard game controls 
+* Keyboard game controls
 * Mouse and keyboard controlled shell menus
 * Scoring and local high scores
 * Music and sound effects
@@ -14,7 +14,7 @@ Since this is a one-person project and it was almost complete by the time this r
 ## Progress
 - [ ] Fast-paced gameplay (requires balancing and tuning)
 - [ ] 2D graphics (particles and details not complete)
-- [x] Keyboard game controls 
+- [x] Keyboard game controls
 - [x] Mouse and keyboard controlled shell menus
 - [x] Scoring and local high scores
-- [ ] Music and sound effects (sound effects not complete)
+- [x] Music and sound effects
