@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
     
-    private float _speedRequirement = 1; // Default speed requirement
+    private float _speedRequirement = 4.5f; // Default speed requirement
 
     public float speedRequirement {
         get {
@@ -16,7 +16,7 @@ public class Obstacle : MonoBehaviour {
         }
     }
 
-    public int speedThreshold;
+    public float speedThreshold;
 
     private ParticleSystem thisParticleSystem;
 
@@ -54,10 +54,10 @@ public class Obstacle : MonoBehaviour {
 
     private void setColor() {
         // Calculate a value between 0 and 1 depending on _speedRequirement
-        float colorValue = 1 - Mathf.Abs((11 - 2 * _speedRequirement) / 9);
+        float colorValue = 1 - Mathf.Abs((9 - 2 * _speedRequirement) / 3);
 
         // Change the color to red if speed is greater than 5.5, otherwise towards green
-        if (_speedRequirement > 5.5) {
+        if (_speedRequirement > 4.5) {
             Color color = new Color(1, colorValue, colorValue);
             gameObject.GetComponent<SpriteRenderer>().color = color;
         } else {

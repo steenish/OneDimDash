@@ -386,7 +386,7 @@ MonoBehaviour:
   largestWidth: 4.5
   spawnExtraSpace: 0
   maximumSpeedParticles: 30
-  maximumChangeInSpeedRequirement: 5
+  maximumChangeInSpeedRequirement: 3
   timeToLikelySpawn: 100
 --- !u!4 &791538557
 Transform:
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: {fileID: 1151290203}
-  obstacleSpeedMultiplier: 5
+  obstacleSpeedMultiplier: 7
 --- !u!1 &907797534
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c429a488f8cefc54388e1727d031c230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 1
-  maxSpeed: 10
+  minSpeed: 3
+  maxSpeed: 6
   playerSprite: {fileID: 1151290201}
 --- !u!114 &1151290204
 MonoBehaviour:
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: {fileID: 1151290203}
-  accelerationMultiplier: 60
+  accelerationMultiplier: 20
 --- !u!61 &1151290205
 BoxCollider2D:
   m_ObjectHideFlags: 0
