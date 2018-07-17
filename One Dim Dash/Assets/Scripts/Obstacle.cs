@@ -58,11 +58,9 @@ public class Obstacle : MonoBehaviour {
 
         // Change the color to red if speed is greater than 5.5, otherwise towards green
         if (_speedRequirement > 4.5) {
-            Color color = new Color(1, colorValue, colorValue);
-            gameObject.GetComponent<SpriteRenderer>().color = color;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, colorValue, colorValue);
         } else {
-            Color color = new Color(colorValue, 1, colorValue);
-            gameObject.GetComponent<SpriteRenderer>().color = color;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(colorValue, 1, colorValue);
         }
     }
 }

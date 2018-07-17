@@ -35,8 +35,4 @@ public class PlayerState : MonoBehaviour {
             playerSprite.color = new Color(colorValue, 1, colorValue);
         }
     }
-
-    private void Update() {
-        Debug.Log(speed);
-    }
 }
