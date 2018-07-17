@@ -12,17 +12,32 @@ public class ScoreCounter : MonoBehaviour {
     public float scoreMultiplier;
 
     public float currentScore { get; private set; }
-	
+
+    private bool _isCounting; 
+
+    public bool isCounting { get; private set; }
+
     void Start() {
         currentScore = 0;
+        isCounting = true; // Starts counting at object load by default
+    }
+
+    public void startCounting() {
+        isCounting = true;
+    }
+
+    public void stopCounting() {
+        isCounting = false;
     }
 
 	// Update is called once per frame
 	void Update () {
-        float dDistance = playerState.speed * Time.deltaTime;
-        currentScore += dDistance * scoreMultiplier;
+        if (isCounting) {
+            float dDistance = playerState.speed * Time.deltaTime;
+            currentScore += dDistance * scoreMultiplier;
 
-        updateScoreText();
+            updateScoreText();
+        }
 	}
 
     // Updates the UI score text with the current score

@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
+    public GameObject gameMaster;
+
     private ParticleSystem thisParticleSystem;
     private SpriteRenderer thisSpriteRenderer;
     private BoxCollider2D thisCollider;
 
     private float deathAnimationDuration;
-
-    public float extraWaitTime;
 
     void Start() {
         thisParticleSystem = gameObject.GetComponent<ParticleSystem>();
@@ -21,12 +21,16 @@ public class Player : MonoBehaviour {
     }
 
     public void kill() {
+        gameMaster.GetComponent<ScoreCounter>().stopCounting();
+
         PersistentAudioManager.instance.play("DeathSound");
         thisParticleSystem.Play();
         thisSpriteRenderer.enabled = false;
         thisCollider.enabled = false;
+
         int finalScore = Mathf.RoundToInt(GameObject.Find("GameMaster").GetComponent<ScoreCounter>().currentScore);
         PlayerPrefs.SetInt("LastScore", finalScore);
+
         StartCoroutine(waitForDeathAnimationThenSwitchScene());
     }
 

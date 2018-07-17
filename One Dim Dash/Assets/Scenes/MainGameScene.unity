@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8893d5ebc125a4aa896b6c7b249234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraWaitTime: 0
+  gameMaster: {fileID: 791538554}
 --- !u!50 &1151290207
 Rigidbody2D:
   serializedVersion: 4
