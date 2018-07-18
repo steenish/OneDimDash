@@ -2196,14 +2196,14 @@ MonoBehaviour:
   sounds:
   - name: StartMenuTheme
     clip: {fileID: 8300000, guid: 4fdbe0028509307469dc6b5a17fc7b1d, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: DeathSound
-    clip: {fileID: 8300000, guid: 88ba82811b7ed57449b0d5ee7cc8f5e9, type: 3}
-    volume: 0.7
-    pitch: 0.6
+    clip: {fileID: 8300000, guid: e2a8c091edbd083419a2c59e4755715a, type: 3}
+    volume: 0.8
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MenuButtonSelect
@@ -2213,9 +2213,9 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: PassedObstacle
-    clip: {fileID: 8300000, guid: afa3ef2744af8874fb47904890cfc67e, type: 3}
-    volume: 0.2
-    pitch: 3
+    clip: {fileID: 8300000, guid: aa0cafabf28142b4d8c6e3bcfe7b7f61, type: 3}
+    volume: 0.5
+    pitch: 1.5
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1628530645
