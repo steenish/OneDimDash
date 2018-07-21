@@ -1,7 +1,7 @@
 # OneDimDash
-A game currently in development. It is played in one dimension and therefore only has one controllable aspect, the speed. Playing the game means avoiding obstacles by matching the speed requirement of the obstacle. The game (I just lost the game) therefore focuses on reaction speed and competing for the highest score.
+A game played in one dimension and therefore only has one controllable aspect, the speed. Playing the game means avoiding obstacles by matching the speed requirement of the obstacle. The game (I just lost the game) therefore focuses on reaction speed and competing for the highest score.
 
-Since this is a one-person project and it was almost complete by the time this repo was created, the repo is mostly used as a backup.
+The game is considered finished, and no more features are planned.
 
 ## Feature list:
 * Fast-paced gameplay
@@ -12,9 +12,11 @@ Since this is a one-person project and it was almost complete by the time this r
 * Music and sound effects
 
 ## Progress
-- [ ] Fast-paced gameplay (requires balancing and tuning)
-- [ ] 2D graphics (particles and details not complete)
+- [x] Fast-paced gameplay
+- [x] 2D graphics
 - [x] Keyboard game controls
 - [x] Mouse and keyboard controlled shell menus
 - [x] Scoring and local high scores
 - [x] Music and sound effects
+
+All planned features have been implemented, and the full version has been released.
