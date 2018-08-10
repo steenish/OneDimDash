@@ -1600,9 +1600,10 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Instructions:\nThe white diamond is you\nYou exist in one dimension \nYou
-    move in only one direction\nChange your speed by pressing left and right (A and
-    D)\nYour speed is indicated by colors from green to red\nMatch the color of the
-    rectangles to pass through them\nYour score increases with distance travelled\n"
+    move in only one direction\nChange your speed by touching the left and right halves
+    of the screen\nYour speed is indicated by colors from green to red\nMatch the
+    color of the rectangles to pass through them\nYour score increases with distance
+    travelled\n"
 --- !u!222 &1188220723
 CanvasRenderer:
   m_ObjectHideFlags: 0
